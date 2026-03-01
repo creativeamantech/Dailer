@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data Import"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paste your Excel/CSV data below:"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_pasted_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/edit_text"
+        android:gravity="top|start"
+        android:hint="Name\tPhone\tCompany\nJohn Doe\t555-1234\tAcme Corp"
+        android:inputType="textMultiLine"
+        android:minLines="5"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/btn_detect_columns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detect Columns"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Dynamic layout for mapping columns -->
+    <LinearLayout
+        android:id="@+id/layout_column_mapping"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Map Columns"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Name Column:" />
+
+            <Spinner
+                android:id="@+id/spinner_name_column"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Phone Number Column:" />
+
+            <Spinner
+                android:id="@+id/spinner_phone_column"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preview: 0 contacts found."
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btn_start_dialing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Start Auto-Dial" />
+    </LinearLayout>
+
+</LinearLayout>

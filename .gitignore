@@ -1,0 +1,29 @@
+# Logs
+*.log
+
+# Build folders
+build/
+app/build/
+.gradle/
+*.iml
+.idea/
+
+# OS-specific
+.DS_Store
+
+# Local configuration
+local.properties
+
+# Android Studio Navigation editor temp files
+.navigation/
+
+# Android Studio captures folder
+captures/
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folder generated in Android Studio 2.2 and later
+.externalNativeBuild
+.cxx/
