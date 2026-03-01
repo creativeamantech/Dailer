@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dataImportFragment">
+
+    <fragment
+        android:id="@+id/dataImportFragment"
+        android:name="com.autodialer.app.ui.DataImportFragment"
+        android:label="Data Import"
+        tools:layout="@layout/fragment_data_import">
+        <action
+            android:id="@+id/action_dataImportFragment_to_activeDialingFragment"
+            app:destination="@id/activeDialingFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/activeDialingFragment"
+        android:name="com.autodialer.app.ui.ActiveDialingFragment"
+        android:label="Active Dialing"
+        tools:layout="@layout/fragment_active_dialing">
+        <action
+            android:id="@+id/action_activeDialingFragment_to_sessionSummaryFragment"
+            app:destination="@id/sessionSummaryFragment"
+            app:popUpTo="@id/dataImportFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sessionSummaryFragment"
+        android:name="com.autodialer.app.ui.SessionSummaryFragment"
+        android:label="Session Summary"
+        tools:layout="@layout/fragment_session_summary">
+        <action
+            android:id="@+id/action_sessionSummaryFragment_to_dataImportFragment"
+            app:destination="@id/dataImportFragment"
+            app:popUpTo="@id/dataImportFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
